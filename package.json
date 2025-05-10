@@ -4,12 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "tunnel": "lt --port 3000 --subdomain clerk-webhook-dev",
+    "dev:tunnel": "concurrently \"npm run dev\" \"npm run tunnel\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.19.2",
+    "@supabase/supabase-js": "^2.49.4",
     "gray-matter": "^4.0.3",
     "next": "15.3.2",
     "react": "^19.0.0",
@@ -23,8 +26,10 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^9.1.2",
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
+    "localtunnel": "^2.0.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
